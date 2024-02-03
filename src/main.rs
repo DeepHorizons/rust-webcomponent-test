@@ -12,7 +12,7 @@ extern "C" {
 }
 
 
-// Need to copy this manually into the snippips folder
+// Need to copy this manually into the snippits folder
 //#[wasm_bindgen(module = "/example-page/pkg/snippets/custom-elements-419327fa2779072f/src/make_custom_element.js")]
 //extern "C" {
 //    fn make_custom_element();
