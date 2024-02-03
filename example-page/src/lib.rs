@@ -35,5 +35,5 @@ impl Default for ComponentWrapper {
 
 #[wasm_bindgen(start)]
 pub fn run() {
-    ComponentWrapper::define("welcome-page");
+    ComponentWrapper::define("example-page");
 }

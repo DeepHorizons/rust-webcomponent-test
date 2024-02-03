@@ -12,10 +12,11 @@ extern "C" {
 }
 
 
-#[wasm_bindgen(module = "/example-page/pkg/snippets/custom-elements-419327fa2779072f/src/make_custom_element.js")]
-extern "C" {
-    fn make_custom_element();
-}
+// Need to copy this manually into the snippips folder
+//#[wasm_bindgen(module = "/example-page/pkg/snippets/custom-elements-419327fa2779072f/src/make_custom_element.js")]
+//extern "C" {
+//    fn make_custom_element();
+//}
 
 // TODO how do I include the .wasm file
 
@@ -25,14 +26,16 @@ fn App() -> Html {
     html! {
         <>
             <h1>{"Top level"}</h1>
-            <welcome-page></welcome-page>
+            <example-page></example-page>
             <h1>{"End"}</h1>
         </>
     }
 }
 
 fn main() {
-    wasm_bindgen_futures::spawn_local(ep_init());
-    ep_run();
+    yew::platform::spawn_local(async {
+        ep_init().await;
+        ep_run();
+    });
     yew::Renderer::<App>::new().render();
 }
